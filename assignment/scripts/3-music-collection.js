@@ -2,7 +2,7 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 
-function addToCollection(title1, artist1, yearPublished1) {
+function addToCollection(title1, artist1, yearPublished1) { //adds album info to collection
     let album = {
         title: title1,
         artist: artist1,
@@ -20,7 +20,7 @@ console.log(addToCollection('The Rip Tide', 'Bierut', 2011));
 console.log(addToCollection('Every Kingdom', 'Ben Howard', 2011));
 console.log(collection);
 
-function showCollection(array) {
+function showCollection(array) {    //logs all albums to console
     console.log('# in collection',array.length);
     for (let i = 0; i < array.length; i++) {
         console.log(array[i].title, 'by', array[i].artist, 'published in', array[i].yearPublished);
@@ -28,3 +28,22 @@ function showCollection(array) {
 }
 
 showCollection(collection);
+
+function findByArtist(artist) {
+    let LP = [];
+    for (let i = 0; i < collection.length; i++) {
+        if (collection[i].artist === artist) {  //check if artist matches the artist in any album
+            LP.push(collection[i]);
+        }    
+    }
+    if (LP.length > 0) {
+        console.log(LP);
+        return LP;
+    }
+    else return console.log('no match');
+}
+
+findByArtist('Radiohead');  //match
+findByArtist('Beyonce');    //no match
+findByArtist('Weezer');     //multiple matches
+
