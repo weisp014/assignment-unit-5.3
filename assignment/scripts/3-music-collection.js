@@ -18,5 +18,13 @@ console.log(addToCollection('Weezer (Blue Album)', 'Weezer', 2004));
 console.log(addToCollection('Pinkerton', 'Weezer', 1996));
 console.log(addToCollection('The Rip Tide', 'Bierut', 2011));
 console.log(addToCollection('Every Kingdom', 'Ben Howard', 2011));
-
 console.log(collection);
+
+function showCollection(array) {
+    console.log('# in collection',array.length);
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i].title, 'by', array[i].artist, 'published in', array[i].yearPublished);
+    }
+}
+
+showCollection(collection);
