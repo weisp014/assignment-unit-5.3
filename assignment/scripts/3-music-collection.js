@@ -87,7 +87,7 @@ search();                                       //return collection
 search({artist: 'Weezer', year: 2000});         //no match
 
 search({trackName: 'Hello'});
-search({trackName: 'Thirsty'});
+search({trackName: 'Thirsty'}); //doesn't seem to find this match
 search({trackName: 'Goodbye'});
 
 
