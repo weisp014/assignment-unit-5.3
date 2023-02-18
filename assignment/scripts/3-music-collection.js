@@ -21,10 +21,13 @@ console.log(addToCollection('The Rip Tide', 'Beirut', 2011, [{trackName: 'Phone'
 console.log(addToCollection('Every Kingdom', 'Ben Howard', 2011, [{trackName: 'Twix', duration: '1:55'}, {trackName: 'Cheetos', duration: '2:05'}]));
 console.log(collection);
 
-function showCollection(array) {    //logs all albums to console
+function showCollection(array) {    //logs all albums to console with tracks
     console.log('# in collection',array.length);
     for (let i = 0; i < array.length; i++) {
-        console.log(`${array[i].title}, by ${array[i].artist} published in ${array[i].yearPublished}:`);
+        console.log(`${array[i].title} by ${array[i].artist} published in ${array[i].yearPublished}:`);
+        for (let j = 0; j < array[i].tracks.length; j++) {
+            console.log(`${j+1}. ${array[i].tracks[j].trackName}: ${array[i].tracks[j].duration}`);
+        }
     }
 }
 
